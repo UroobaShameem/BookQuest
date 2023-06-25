@@ -5,24 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bookstore</title>
+  <link rel="stylesheet" href="asset/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">Bookstore</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <!--logo container start -->
+  <div class="container-fluid" id="navbar">
+    <div class="row text-center">
+        <div class="logo">
+          <img src="asset/images/logo.png" alt="logo">
+        </div>
+    </div>
+  </div>
+  <!--logo container end -->
+
+  <!--navbar start -->
+  <nav class="navbar navbar-expand-lg" id="navbar">
+    <div class="container d-flex justify-content-center">
+      <button class="navbar-toggler centered-div" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Books</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,8 +40,8 @@
               <li><a class="dropdown-item" href="#">Fiction</a></li>
               <li><a class="dropdown-item" href="#">Non-Fiction</a></li>
               <li><a class="dropdown-item" href="#">Sci-Fi</a></li>
-              <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Mystery</a></li>
+              <li><a class="dropdown-item" href="#">Romance</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -44,9 +52,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fas fa-sign-in-alt"></i> Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-user-plus"></i> Signup</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-shopping-cart"></i> Cart</a>
@@ -61,15 +66,44 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Login</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title" id="loginModalLabel">Login / Sign up</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <div class="modal-body">
-          <!-- Login form goes here -->
+          <!-- Login Form -->
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+          <!-- Sign-up Form -->
+          <form id="signupForm" style="display: none;">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="contact">Contact Number</label>
+              <input type="text" class="form-control" id="contact" placeholder="Enter your contact number">
+            </div>
+            <div class="form-group">
+              <label for="newPassword">Password</label>
+              <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign up</button>
+          </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Login</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-link" id="signupToggle">Sign up</button>
         </div>
       </div>
     </div>
@@ -94,4 +128,6 @@
     </div>
   </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="asset/script.js"></script>
 </html>
