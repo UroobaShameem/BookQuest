@@ -1,3 +1,9 @@
-#navbar, #navbar a  {
+#navbar, #navbar a, footer  {
     background-color: #2c698d;
     color: #fff; }
+
+.nav-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
