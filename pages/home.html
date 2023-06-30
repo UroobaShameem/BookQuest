@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bookstore</title>
+  <link rel="stylesheet" href="asset/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <!--logo container start -->
+  <div class="container-fluid" id="navbar">
+    <div class="row text-center">
+        <div class="logo">
+          <img src="asset/images/logo.png" alt="logo">
+        </div>
+    </div>
+  </div>
+  <!--logo container end -->
+
+  <!--navbar start -->
+  <nav class="navbar navbar-expand-lg text-white" id="navbar">
+    <div class="container d-flex justify-content-center">
+      <button class="navbar-toggler centered-div" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Fiction</a></li>
+              <li><a class="dropdown-item" href="#">Non-Fiction</a></li>
+              <li><a class="dropdown-item" href="#">Sci-Fi</a></li>
+              <li><a class="dropdown-item" href="#">Mystery</a></li>
+              <li><a class="dropdown-item" href="#">Romance</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fas fa-sign-in-alt"></i> Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-shopping-cart"></i> Cart</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login / Sign up</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Login Form -->
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+          <!-- Sign-up Form -->
+          <form id="signupForm" style="display: none;">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="contact">Contact Number</label>
+              <input type="text" class="form-control" id="contact" placeholder="Enter your contact number">
+            </div>
+            <div class="form-group">
+              <label for="newPassword">Password</label>
+              <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign up</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-link" id="signupToggle">Sign up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Cart</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Cart content goes here -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--navbar end -->
+
+  <div class="container-fluid">
+  <!-- Hero section -->
+  <section class="hero">
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to Bookshop</h1>
+      <p class="lead">Discover a wide range of books for every reader</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Explore Now</a>
+    </div>
+  </section>
+
+  <!-- Featured books section -->
+  <section class="featured-books">
+    <h2 class="section-title">Featured Books</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <!-- Book 1 -->
+        <div class="card mb-4">
+          <img class="card-img-top" src="book1.jpg" alt="Book 1">
+          <div class="card-body">
+            <h5 class="card-title">Book 1 Title</h5>
+            <p class="card-text">Book 1 Description</p>
+            <a href="#" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+
+      <!-- Book 2 -->
+      <div class="card mb-4">
+        <img class="card-img-top" src="book2.jpg" alt="Book 2">
+        <div class="card-body">
+          <h5 class="card-title">Book 2 Title</h5>
+          <p class="card-text">Book 2 Description</p>
+          <a href="#" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <!-- Book 3 -->
+      <div class="card mb-4">
+        <img class="card-img-top" src="book3.jpg" alt="Book 3">
+        <div class="card-body">
+          <h5 class="card-title">Book 3 Title</h5>
+          <p class="card-text">Book 3 Description</p>
+          <a href="#" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Book categories section -->
+<section class="book-categories">
+  <h2 class="section-title">Book Categories</h2>
+  <div class="row">
+    <div class="col-lg-4 col-md-6">
+      <!-- Category 1 -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Category 1</h5>
+          <a href="#" class="btn btn-primary">Explore</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <!-- Category 2 -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Category 2</h5>
+          <a href="#" class="btn btn-primary">Explore</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+      <!-- Category 3 -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Category 3</h5>
+          <a href="#" class="btn btn-primary">Explore</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+  <!--footer start -->
+  <footer class="footer mt-4">
+    <div class="container text-center">
+      <p>&copy; 2023 Bookshop. All rights reserved.</p>
+    </div>
+  </footer>
+  <!--footer end -->
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="asset/script.js"></script>
+</html>
