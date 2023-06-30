@@ -1,0 +1,20 @@
+body {
+    background-image: url('https://st3.depositphotos.com/8852212/16886/i/600/depositphotos_168869172-stock-photo-wooden-table-in-blurred-image.jpg');
+    background-size: cover;
+    }
+
+    .center-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        
+        .center-content {
+            text-align: center;
+        }
+        
+        .button-spacing {
+            margin-top: 10px;
+        }
