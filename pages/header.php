@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   
@@ -77,32 +78,32 @@
           <div class="tab-content">
             <div id="login" class="tab-pane fade show active">
               <h3>Login</h3>
-              <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+              <form method="POST" action="login.php">
                 <div class="mb-3">
-                  <label for="loginUsername" id="username" class="form-label">Username</label>
-                  <input type="text" class="form-control" id="loginUsername" placeholder="Enter your username">
+                  <label for="loginUsername" class="form-label">Username</label>
+                  <input type="text" class="form-control" name="username" placeholder="Enter your username">
                 </div>
                 <div class="mb-3">
-                  <label for="loginPassword" id="password" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password">
+                  <label for="loginPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" name="password" placeholder="Enter your password">
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
               </form>
             </div>
             <div id="signup" class="tab-pane fade">
               <h3>Signup</h3>
-              <form>
+              <form method="POST" action="signup.php">
                 <div class="mb-3">
                   <label for="signupUsername" class="form-label">Username</label>
-                  <input type="text" class="form-control" id="signupUsername" placeholder="Choose a username">
+                  <input type="text" class="form-control" name="username" placeholder="Username">
                 </div>
                 <div class="mb-3">
                   <label for="signupEmail" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="signupEmail" placeholder="Enter your email">
+                  <input type="email" class="form-control" name="email" placeholder="Enter your email">
                 </div>
                 <div class="mb-3">
                   <label for="signupPassword" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="signupPassword" placeholder="Choose a password">
+                  <input type="password" class="form-control" name="password" placeholder="Choose a password">
                 </div>
                 <button type="submit" class="btn btn-primary">Signup</button>
               </form>
@@ -132,102 +133,5 @@
     </div>
   </div>
   <!--navbar end -->
-
-  <div class="container-fluid">
-  <!-- Hero section -->
-  <section class="hero">
-    <div class="jumbotron">
-      <h1 class="display-4">Welcome to Bookshop</h1>
-      <p class="lead">Discover a wide range of books for every reader</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Explore Now</a>
-    </div>
-  </section>
-
-  <!-- Featured books section -->
-  <section class="featured-books">
-    <h2 class="section-title">Featured Books</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <!-- Book 1 -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="book1.jpg" alt="Book 1">
-          <div class="card-body">
-            <h5 class="card-title">Book 1 Title</h5>
-            <p class="card-text">Book 1 Description</p>
-            <a href="#" class="btn btn-primary">View Details</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-
-      <!-- Book 2 -->
-      <div class="card mb-4">
-        <img class="card-img-top" src="book2.jpg" alt="Book 2">
-        <div class="card-body">
-          <h5 class="card-title">Book 2 Title</h5>
-          <p class="card-text">Book 2 Description</p>
-          <a href="#" class="btn btn-primary">View Details</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <!-- Book 3 -->
-      <div class="card mb-4">
-        <img class="card-img-top" src="book3.jpg" alt="Book 3">
-        <div class="card-body">
-          <h5 class="card-title">Book 3 Title</h5>
-          <p class="card-text">Book 3 Description</p>
-          <a href="#" class="btn btn-primary">View Details</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Book categories section -->
-<section class="book-categories">
-  <h2 class="section-title">Book Categories</h2>
-  <div class="row">
-    <div class="col-lg-4 col-md-6">
-      <!-- Category 1 -->
-      <div class="card mb-4">
-        <div class="card-body">
-          <h5 class="card-title">Category 1</h5>
-          <a href="#" class="btn btn-primary">Explore</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <!-- Category 2 -->
-      <div class="card mb-4">
-        <div class="card-body">
-          <h5 class="card-title">Category 2</h5>
-          <a href="#" class="btn btn-primary">Explore</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <!-- Category 3 -->
-      <div class="card mb-4">
-        <div class="card-body">
-          <h5 class="card-title">Category 3</h5>
-          <a href="#" class="btn btn-primary">Explore</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-</div>
-
-  <!--footer start -->
-  <footer class="footer pt-3 pb-1">
-    <div class="container text-center">
-      <p>&copy; 2023 Bookshop. All rights reserved.</p>
-    </div>
-  </footer>
-  <!--footer end -->
 </body>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="asset/script.js"></script>
 </html>
