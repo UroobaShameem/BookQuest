@@ -1,9 +1,22 @@
-#navbar, #navbar a, footer  {
-    background-color: #2c698d;
-    color: #fff; }
 
-.nav-center{
+#navbar, #navbar a, footer  {
+    background-color: #15507a;
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif ;
+    font-size: 1.4rem;
+    padding-inline: 1.2rem  ; }
+
+.nav-center {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
 }
+
+#navbar a:hover {
+    color: #fff;
+    background-color: #2a90b6;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out; }
+
+
