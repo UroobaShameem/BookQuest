@@ -1,49 +1,59 @@
 <?php
-include 'config.php';
+session_start();
 
-session_start(); // Start a session to store user data
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Perform any necessary data validation or sanitization here
-
-    // Connect to your database
-    $servername = "localhost";
-    $username = "your_username";
-    $password = "your_password";
-    $dbname = "your_database_name";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Prepare and execute SQL statement to retrieve user data based on the entered email
-    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
-
-    // Verify password and perform login
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['user_name'] = $user['name'];
-
-        // Redirect to the dashboard or any other authorized page
-        header("Location: dashboard.php");
-        exit();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check if the username and password have been set
+    if (isset($_POST["username"])) {
+        $username = $_POST["username"];
     } else {
-        // Invalid credentials
-        echo "Invalid email or password.";
+        exit("Username is required");
     }
 
-    // Close statement and database connection
-    $stmt->close();
-    $conn->close();
+    if (isset($_POST["password"])) {
+        $password = $_POST["password"];
+    } else {
+        exit("Password is required");
+    }
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // Connect to the database
+    $conn = mysqli_connect("localhost", "root", "", "book_quest");
+
+    // Check if the database connection is successful
+    if (!$conn) {
+        die("Database connection failed: " . mysqli_connect_error());
+    }
+
+
+    $username = mysqli_real_escape_string($conn, $username);
+
+    // Query to validate the login details
+    $query = "SELECT * FROM user WHERE username='$username' LIMIT 1";
+    $result = mysqli_query($conn, $query);
+
+    // Check if the query was successful
+    if ($result) {
+        // Check if any rows were returned
+        if (mysqli_num_rows($result) == 1) {
+            $user = mysqli_fetch_assoc($result);
+            if ($password == $user["password"]) {
+                // Successful login
+                $_SESSION["username"] = $username;
+                header("Location: home.php");
+                exit();
+            } else {
+                $error = "Invalid password";
+            }
+        } else {
+            $error = "Invalid username";
+        }
+    } else {
+        $error = "Error: " . mysqli_error($conn);
+    }
+
+    mysqli_close($conn);
 }
 ?>

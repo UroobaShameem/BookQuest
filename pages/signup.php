@@ -1,56 +1,25 @@
 <?php
-include 'config.php';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
 
-if (isset($_POST['submit'])) {
-    // Retrieve form data and sanitize inputs
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $confirmPassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
-    $userType = $_POST['user_type'];
+    // Assuming you have already established a database connection
+    $conn = mysqli_connect("localhost", "root", "", "book_quest");
 
-    // Perform validation and error checking
-    $errors = [];
+    // Query to insert the signup details into the "users" table
+    $query = "INSERT INTO user (username, password, email) VALUES ('$username', '$password', '$email')";
+    $result = mysqli_query($conn, $query);
 
-    if (empty($name) || empty($email) || empty($password) || empty($confirmPassword)) {
-        $errors[] = 'All fields are required.';
+    if ($result) {
+        // Successful signup
+        header("Location: home.php");
+        exit();
+    } else {
+        // Failed to insert user details, display an error message
+        $error = "Failed to create an account";
     }
 
-    if ($password !== $confirmPassword) {
-        $errors[] = 'Passwords do not match.';
-    }
-
-    if (count($errors) === 0) {
-        // Check if the user already exists
-        $query = "SELECT * FROM users WHERE email = '$email'";
-        $result = mysqli_query($conn, $query);
-
-        if (mysqli_num_rows($result) > 0) {
-            $errors[] = 'User already exists.';
-        } else {
-            // Hash the password securely
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-            // Insert the user into the database
-            $query = "INSERT INTO users (name, email, password, user_type) VALUES ('$name', '$email', '$hashedPassword', '$userType')";
-            $insertResult = mysqli_query($conn, $query);
-
-            if ($insertResult) {
-                // Registration successful
-                header('Location: login.php');
-                exit();
-            } else {
-                $errors[] = 'Registration failed. Please try again later.';
-            }
-        }
-    }
-
-    // Handle and display errors
-    if (count($errors) > 0) {
-        foreach ($errors as $error) {
-            echo $error . "<br>";
-        }
-    }
+    mysqli_close($conn);
 }
-
 ?>
