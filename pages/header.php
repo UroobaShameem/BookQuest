@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Home</title>
+  <title><?php echo $pageTitle; ?></title>
   <link rel="stylesheet" href="asset/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
@@ -25,27 +25,16 @@
       <div class="collapse navbar-collapse nav-center" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="home.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="">About</a>
           </li>
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categories
-            </a>
-            <ul class="dropdown-menu pt-0 mt-0">
-              <li><a class="dropdown-item" href="#">Fiction</a></li>
-              <li><a class="dropdown-item" href="#">Non-Fiction</a></li>
-              <li><a class="dropdown-item" href="#">Mystery</a></li>
-              <li><a class="dropdown-item" href="#">Romance</a></li>
-              <li><a class="dropdown-item" href="#">Sci-Fi</a></li>
-            </ul>
-          </li>
-
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="books.php">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="books.php">Contact</a>
           </li>
 
           <li class="nav-item nav-right">
