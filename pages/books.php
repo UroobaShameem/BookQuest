@@ -43,10 +43,7 @@ include 'header.php'; ?>
         echo '<p class="card-subtitle mb-2 text-muted">' . $row['book_id'] . '</p>';
         echo '<h6 class="card-subtitle mb-2 text-muted">' . $row['author'] . '</h6>';
         echo '<p class="card-text">Price: $' . $row['price'] . '</p>';
-        echo '<form action="add_to_cart.php" method="post">';
-        echo '<input type="hidden" name="book_id" value="' . $row['book_id'] . '">';
-        echo '<a href="add_to_cart.php?book_id=' . $row['book_id'] . '" class="btn btn-primary">Add to Cart</a>'; // Cart button linking to PHP script
-        echo '</form>';
+        echo '<a href="add_to_cart.php?book_id=' . $row['book_id'] . '" class="btn btn-primary">Add to Cart</a>';
         echo '</div>';
         echo '</div>';
         echo '</div>';

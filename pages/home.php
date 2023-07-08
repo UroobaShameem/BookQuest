@@ -1,4 +1,8 @@
-<?php include 'header.php'; ?>
+<?php
+$pageTitle = "Home";
+include 'header.php';
+
+?>
 
   <div class="container-fluid">
   
