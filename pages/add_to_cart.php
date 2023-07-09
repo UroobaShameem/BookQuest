@@ -1,33 +1,34 @@
 <?php
 // Check if the book_id is provided
-if (isset($_GET['book_id'])) {
-    $book_id = $_GET['book_id'];
+if (isset($_POST['book_id'])) {
+    $book_id = $_POST['book_id'];
 
     // Assuming you have a database connection
-    $conn = new mysqli('localhost', 'root', '', 'book_quest');
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    include_once 'config.php';
 
-    // Check if the book exists
-    $checkBookQuery = "SELECT * FROM books WHERE book_id = $book_id";
-    $checkBookResult = $conn->query($checkBookQuery);
+    // Check if the book is already in the cart
+    $cartQuery = "SELECT * FROM cart WHERE book_id = $book_id";
+    $cartResult = $conn->query($cartQuery);
 
-    if ($checkBookResult->num_rows > 0) {
-        // Book exists, add it to the cart
-        $cart_id = uniqid(); // Generate a unique cart ID
-        $quantity = 1; // Default quantity is 1
-
-        // Insert the book into the cart table
-        $insertQuery = "INSERT INTO cart (cart_id, book_id, quantity) VALUES ('$cart_id', '$book_id', $quantity)";
-        if ($conn->query($insertQuery) === TRUE) {
+    if ($cartResult->num_rows > 0) {
+        // Update the quantity if the book is already in the cart
+        $cartItem = $cartResult->fetch_assoc();
+        $newQuantity = $cartItem['quantity'] + 1;
+        $updateQuery = "UPDATE cart SET quantity = $newQuantity WHERE book_id = $book_id";
+        if ($conn->query($updateQuery) === TRUE) {
             header("Location: cart.php");
         } else {
-            echo "Error adding book to cart: " . $conn->error;
+            echo "Error updating quantity: ";
         }
     } else {
-        echo "Book not found!";
+        // Insert a new row in the cart table if the book is not in the cart
+        $insertQuery = "INSERT INTO cart (book_id, quantity) VALUES ($book_id, 1)";
+        if ($conn->query($insertQuery) === TRUE) {
+            echo "Book added to cart successfully!";
+        } else {
+            echo "Error adding book to cart: ";
     }
+}
 
     $conn->close();
 } else {

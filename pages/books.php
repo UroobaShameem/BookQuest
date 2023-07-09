@@ -27,12 +27,7 @@ include 'header.php'; ?>
     // Check if any books found for the category
     if (mysqli_num_rows($result) > 0) {
       // Loop through the rows and display book cards
-      $cardCount = 0;
       while ($row = mysqli_fetch_assoc($result)) {
-        if ($cardCount % 3 == 0 && $cardCount != 0) {
-          echo '</div><div class="row">';
-        }
-
         echo '<div class="col-sm-6 col-md-4 col-lg-4">';
         echo '<div class="card mb-3">';
         echo '<div class="img-container">';
@@ -43,12 +38,13 @@ include 'header.php'; ?>
         echo '<p class="card-subtitle mb-2 text-muted">' . $row['book_id'] . '</p>';
         echo '<h6 class="card-subtitle mb-2 text-muted">' . $row['author'] . '</h6>';
         echo '<p class="card-text">Price: $' . $row['price'] . '</p>';
-        echo '<a href="add_to_cart.php?book_id=' . $row['book_id'] . '" class="btn btn-primary">Add to Cart</a>';
+        echo '<form method="POST" action="add_to_cart.php">';
+        echo '<input type="hidden" name="book_id" value="' . $row['book_id'] . '">';
+        echo '<button type="submit" name="add_to_cart" class="btn btn-primary">Add to Cart</button>';
+        echo '</form>';
         echo '</div>';
         echo '</div>';
         echo '</div>';
-
-        $cardCount++;
       }
     } else {
       echo '<p>No books found in this category.</p>';
