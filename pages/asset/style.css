@@ -21,8 +21,7 @@ body {
     border-radius: 0.5rem;
     transition: all 0.3s ease-in-out; }
 
-
-.checkout_table {
-    font-size: 1.2rem;
-    
-}
+.card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }

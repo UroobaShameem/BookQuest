@@ -13,6 +13,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
+<body>
 <!--navbar start -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary pt-0 mt-0">
     <div class="container-fluid" id="navbar">
@@ -31,7 +32,17 @@
           <li class="nav-item">
             <a class="nav-link" href="books.php">Books</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="orders.php">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logout.php">Logout</a>
+          </li>
           </ul>
       </div>
     </div>
   </nav>
+<!--navbar end -->
+
+</body>
+</html>

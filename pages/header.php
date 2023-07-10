@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><?php echo $pageTitle; ?></title>
   <link rel="stylesheet" href="asset/style.css">
+  <?php if (isset($additionalCSS)): ?>
+    <link rel="stylesheet" href="<?php echo $additionalCSS; ?>">
+<?php endif; ?>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -28,7 +31,7 @@
             <a class="nav-link active" aria-current="page" href="home.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="about.php">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="books.php">Shop</a>
@@ -76,7 +79,8 @@
                   <label for="loginPassword" class="form-label">Password</label>
                   <input type="password" class="form-control" name="password" placeholder="Enter your password">
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <a href="logout.php">Logout</a>
+                <button type="submit" class="btn btn-primary float-right">Login</button>
               </form>
             </div>
             <div id="signup" class="tab-pane fade">

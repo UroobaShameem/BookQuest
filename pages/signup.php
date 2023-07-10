@@ -1,25 +1,35 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $email = $_POST["email"];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // Retrieve form data
+  $username = $_POST['username'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
 
-    // Assuming you have already established a database connection
-    $conn = mysqli_connect("localhost", "root", "", "book_quest");
+  // Assuming you have a database connection
+  include_once 'config.php';
 
-    // Query to insert the signup details into the "users" table
-    $query = "INSERT INTO user (username, password, email) VALUES ('$username', '$password', '$email')";
-    $result = mysqli_query($conn, $query);
+  // Check if the email already exists
+  $checkEmailQuery = "SELECT * FROM user WHERE email = '$email'";
+  $checkEmailResult = $conn->query($checkEmailQuery);
 
-    if ($result) {
-        // Successful signup
-        header("Location: home.php");
-        exit();
-    } else {
-        // Failed to insert user details, display an error message
-        $error = "Failed to create an account";
-    }
+  if ($checkEmailResult->num_rows > 0) {
+    // Email already exists, show an error message
+    echo "This email is already registered. Please use a different email.";
+    $conn->close();
+    exit;
+  }
 
-    mysqli_close($conn);
+  // Insert the user into the database
+  $insertUserQuery = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
+  if ($conn->query($insertUserQuery) === TRUE) {
+    // User registered successfully
+    header("Location: home.php");
+  } else {
+    // Error in inserting user
+    echo "Error signing up: " . $conn->error;
+  }
+
+  // Close the database connection
+  $conn->close();
 }
 ?>
