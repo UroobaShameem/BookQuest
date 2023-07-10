@@ -1,8 +1,10 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif ;
+}
 
 #navbar, #navbar a, footer  {
     background-color: #15507a;
     color: #fff;
-    font-family: Georgia, 'Times New Roman', Times, serif ;
     font-size: 1.4rem;
     padding-inline: 1.2rem  ; }
 
@@ -19,3 +21,8 @@
     border-radius: 0.5rem;
     transition: all 0.3s ease-in-out; }
 
+
+.checkout_table {
+    font-size: 1.2rem;
+    
+}

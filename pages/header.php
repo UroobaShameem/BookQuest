@@ -28,7 +28,7 @@
             <a class="nav-link active" aria-current="page" href="home.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cart.php">About</a>
+            <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="books.php">Shop</a>
@@ -41,7 +41,7 @@
             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fa-solid fa-user-large"></i> Login</a>
           </li>
           <li class="nav-item nav-right">
-            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> Cart</a>
           </li>
 
         </ul>
@@ -102,25 +102,8 @@
       </div>
     </div>
   </div>
-
-  <!-- Cart Modal -->
-  <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="cartModalLabel">Cart</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- Cart content goes here -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Checkout</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- Login Modal End -->
+  
   <!--navbar end -->
 </body>
 </html>

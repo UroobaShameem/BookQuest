@@ -24,7 +24,7 @@ if (isset($_POST['book_id'])) {
         // Insert a new row in the cart table if the book is not in the cart
         $insertQuery = "INSERT INTO cart (book_id, quantity) VALUES ($book_id, 1)";
         if ($conn->query($insertQuery) === TRUE) {
-            echo "Book added to cart successfully!";
+            header("Location: cart.php");
         } else {
             echo "Error adding book to cart: ";
     }
