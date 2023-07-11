@@ -6,9 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><?php echo $pageTitle; ?></title>
   <link rel="stylesheet" href="asset/style.css">
-  <?php if (isset($additionalCSS)): ?>
-    <link rel="stylesheet" href="<?php echo $additionalCSS; ?>">
-<?php endif; ?>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

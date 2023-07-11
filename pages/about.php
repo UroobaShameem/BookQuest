@@ -1,7 +1,6 @@
 <?php
 
 $pageTitle = "About Us";
-$additionalCSS = "asset/about.css";
 include 'header.php';
 ?>
 
@@ -16,8 +15,8 @@ include 'header.php';
         
         <h2 class="text-center">Features</h2>
         <div class="row">
-            <div class="col-md-6 col-lg-4">
-                <div class="card mb-3">
+            <div class="col-md-6 col-lg-4 g-5">
+                <div class="card mb-3 border-0">
                     <img src="asset/images/pictures/about1.png" class="card-img-top" alt="Feature 1">
                     <div class="card-body">
                         <h5 class="card-title">Fast Delivery</h5>
@@ -27,18 +26,18 @@ include 'header.php';
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-4">
-                <div class="card mb-3">
-                    <img src="path/to/feature2.jpg" class="card-img-top" alt="Feature 2">
+            <div class="col-md-6 col-lg-4 g-5">
+                <div class="card mb-3 border-0">
+                    <img src="asset/images/pictures/about2.jpg" class="card-img-top" alt="Feature 2">
                     <div class="card-body">
-                        <h5 class="card-title">Feature 2</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h5 class="card-title">Best Quality</h5>
+                        <p class="card-text">We understand the importance of receiving books in excellent condition. That's why we meticulously inspect every book before it reaches your hands.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-4">
-                <div class="card mb-3">
+            <div class="col-md-6 col-lg-4 g-5">
+                <div class="card mb-3 border-0">
                     <img src="path/to/feature3.jpg" class="card-img-top" alt="Feature 3">
                     <div class="card-body">
                         <h5 class="card-title">Feature 3</h5>

@@ -35,7 +35,7 @@ include 'header.php'; ?>
         echo '</div>';
         echo '<div class="card-body">';
         echo '<h5 class="card-title">' . $row['title'] . '</h5>';
-        echo '<p class="card-subtitle mb-2 text-muted">' . $row['book_id'] . '</p>';
+        
         echo '<h6 class="card-subtitle mb-2 text-muted">' . $row['author'] . '</h6>';
         echo '<p class="card-text">Price: $' . $row['price'] . '</p>';
         echo '<form method="POST" action="add_to_cart.php">';
