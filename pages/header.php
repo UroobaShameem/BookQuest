@@ -33,9 +33,6 @@
           <li class="nav-item">
             <a class="nav-link" href="books.php">Shop</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="books.php">Contact</a>
-          </li>
 
           <li class="nav-item nav-right">
             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fa-solid fa-user-large"></i> Login</a>
@@ -66,7 +63,7 @@
         <div class="modal-body">
           <div class="tab-content">
             <div id="login" class="tab-pane fade show active">
-              <h3>Login</h3>
+              <h3 class="text-center">Login</h3>
               <form method="POST" action="login.php">
                 <div class="mb-3">
                   <label for="loginUsername" class="form-label">Username</label>
@@ -76,12 +73,14 @@
                   <label for="loginPassword" class="form-label">Password</label>
                   <input type="password" class="form-control" name="password" placeholder="Enter your password">
                 </div>
+                <div class="d-flex justify-content-between">
                 <a href="logout.php">Logout</a>
                 <button type="submit" class="btn btn-primary float-right">Login</button>
+                </div>
               </form>
             </div>
             <div id="signup" class="tab-pane fade">
-              <h3>Signup</h3>
+              <h3 class="text-center">Signup</h3>
               <form method="POST" action="signup.php">
                 <div class="mb-3">
                   <label for="signupUsername" class="form-label">Username</label>
@@ -95,7 +94,9 @@
                   <label for="signupPassword" class="form-label">Password</label>
                   <input type="password" class="form-control" name="password" placeholder="Choose a password">
                 </div>
+                <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-primary">Signup</button>
+                </div>
               </form>
             </div>
           </div>

@@ -3,7 +3,7 @@
     background-color: #15507a;
     color: #fff;
     font-family: Georgia, 'Times New Roman', Times, serif ;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     padding-inline: 1.2rem  ; }
 
 .nav-center {
@@ -19,10 +19,18 @@
     border-radius: 0.5rem;
     transition: all 0.3s ease-in-out; }
 
-#card-height {
-    display: flex;
+.d-flex a {
+    font-size: 1.2rem;
+    color: #15507a;
 }
-
-#card-height .card {
-    flex: 1;
+.d-flex button {
+    background-color: #15507a;
+    color: #fff;
+}
+.d-flex button:hover{
+    background-color: #fff;
+    color: #15507a;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
 }

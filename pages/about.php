@@ -8,11 +8,12 @@ include 'header.php';
 body {
     font-family: Georgia, 'Times New Roman', Times, serif ; }
     p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-align: center; }
     h1 {
     color: #15507a;
-    text-decoration: underline; }
+    text-decoration: underline;
+    font-weight:bold ; }
     h2 {
     color: #15507a; }
     .card {
