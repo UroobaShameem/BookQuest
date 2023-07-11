@@ -8,7 +8,8 @@ include 'header.php';
 body {
     font-family: Georgia, 'Times New Roman', Times, serif ; }
     p {
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    text-align: center; }
     h1 {
     color: #15507a;
     text-decoration: underline; }
@@ -21,7 +22,19 @@ body {
 }
 
 .card:hover {
-  background-color: #2a90b6; /* Change this to the desired hover color */
+  background-color: #2a90b6;
+  color: #fff;
+}
+.button a {
+    background-color: #15507a;
+    color: #fff;
+}
+.button a:hover {
+    background-color: #fff;
+    color: #15507a;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
 }
 
 
@@ -34,6 +47,46 @@ body {
             experience to its customers. Our platform provides a user-friendly interface that allows users to effortlessly browse 
             through various categories, discover new releases, and explore timeless classics.
         <br>At Book Quest, we believe in the power of books to inspire, educate, and entertain.</p>
+
+        <h2 class="text-center">CATEGORIES</h2>
+
+<div class="row mb-3">
+    <div class="col-md-6 col-lg-4 g-5">
+        <div class="card mb-3">
+            <img src="asset/images/pictures/cat1.jpg" class="card-img-top" alt="Category 1">
+            <div class="card-body">
+                <h4 class="card-title text-center">Mystery</h4>
+                <div class="text-center button">
+                    <a href="books.php" class="btn btn-primary">View Books</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 g-5">
+        <div class="card mb-3">
+            <img src="asset/images/pictures/cat2.jpeg" class="card-img-top" alt="Category 2">
+            <div class="card-body">
+                <h4 class="card-title text-center">Young Adult</h4>
+                <div class="text-center button">
+                    <a href="books.php" class="btn btn-primary">View Books</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 g-5">
+        <div class="card mb-3">
+            <img src="asset/images/pictures/cat3.jpeg" class="card-img-top" alt="Category 3">
+            <div class="card-body">
+                <h4 class="card-title text-center">Fiction</h4>
+                <div class="text-center button">
+                    <a href="books.php" class="btn btn-primary">View Books</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
         
         <h2 class="text-center">FEATURES</h2>
         <div class="row">
@@ -41,7 +94,7 @@ body {
                 <div class="card mb-3 border-0">
                     <img src="asset/images/pictures/about1.jpg" class="card-img-top" alt="Feature 1">
                     <div class="card-body">
-                        <h5 class="card-title">Fast Delivery</h5>
+                        <h4 class="card-title text-center">Fast Delivery</h4>
                         <p class="card-text">We know how eager you are to start reading your newly 
                             found treasure thats why our providers to ensure fast delivery straight to your doorsteps in good condition.</p>
                     </div>
@@ -52,7 +105,7 @@ body {
                 <div class="card mb-3 border-0">
                     <img src="asset/images/pictures/about2.jpg" class="card-img-top" alt="Feature 2">
                     <div class="card-body">
-                        <h5 class="card-title">Best Quality</h5>
+                        <h4 class="card-title text-center">Best Quality</h4>
                         <p class="card-text">We understand the importance of receiving books in excellent condition. That's why we meticulously inspect every book before it reaches your hands.</p>
                     </div>
                 </div>
@@ -62,50 +115,14 @@ body {
                 <div class="card mb-3 border-0">
                     <img src="asset/images/pictures/about3.jpg" class="card-img-top" alt="Feature 3">
                     <div class="card-body">
-                        <h5 class="card-title">Customer Service</h5>
+                        <h4 class="card-title text-center">Customer Service</h4>
                         <p class="card-text">At BookQuest, we prioritize your satisfaction. Our dedicated customer service team is always ready to assist you with any inquiries or recommendations.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <h2 class="text-center">Categories</h2>
-
-        <div class="row">
-            <!-- Add hover effect to category cards -->
-            <div class="col-md-6 col-lg-4">
-                <div class="card mb-3">
-                    <img src="path/to/category1.jpg" class="card-img-top" alt="Category 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Category 1</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <a href="#" class="btn btn-primary">View Books</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card mb-3">
-                    <img src="path/to/category2.jpg" class="card-img-top" alt="Category 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Category 2</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <a href="#" class="btn btn-primary">View Books</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card mb-3">
-                    <img src="path/to/category3.jpg" class="card-img-top" alt="Category 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Category 3</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <a href="#" class="btn btn-primary">View Books</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
     </div>
 
   
