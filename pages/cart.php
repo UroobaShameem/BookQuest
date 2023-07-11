@@ -2,8 +2,44 @@
 $pageTitle = "Cart";
 include 'header.php';
 ?>
+
+<style>
+    body {
+    font-family: Georgia, 'Times New Roman', Times, serif ;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; }
+    h1 {
+    color: #15507a;
+    font-weight:bold ; }
+    th {
+    color: #15507a;
+    font-size: 1.4rem;}
+    td {
+    font-size: 1.2rem;}
+    h5 {
+    color: #15507a;
+    font-size: 1.6rem;
+    font-weight: bold;}
+    .button a {
+    background-color: #15507a;
+    color: #fff;
+    font-size: 1.4rem;}
+    .button a:hover {
+    background-color: #fff;
+    color: #15507a;
+    font-size: 1.6rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;}
+    .wrapper {
+    flex: 1;}
+
+</style>
+
 <div class="container">
-    <h1>Cart</h1>
+    <div class="wrapper">
+    <h1 class="text-center my-2">CART</h1>
     <?php
     // Assuming you have a database connection
     include_once 'config.php';
@@ -51,9 +87,9 @@ include 'header.php';
                 ?>
             </tbody>
         </table>
-        <div class="text-end">
-            <h5>Total: $<?php echo $total; ?></h5>
-            <a href="checkout.php" class="btn btn-primary">Checkout</a>
+        <div class="text-end button">
+            <h5 >Total: $<?php echo $total; ?></h5>
+            <a href="checkout.php" class="btn btn-primary my-4">Checkout</a>
         </div>
         <?php
     } else {
@@ -98,5 +134,6 @@ include 'header.php';
             xhttp.send("cart_id=" + cartId);
         }
     </script>
+    </div>
 </div>
 <?php include 'footer.php'; ?>
