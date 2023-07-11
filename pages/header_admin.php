@@ -30,7 +30,7 @@
             <a class="nav-link" href="add_book.php">Add Book</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="books.php">Books</a>
+            <a class="nav-link" href="books_admin.php">Books</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="orders.php">Orders</a>

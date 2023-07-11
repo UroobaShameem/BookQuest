@@ -12,6 +12,19 @@ $orderQuery = "SELECT o.order_id, o.name, o.email, o.address, i.book_id, i.quant
 $orderResult = $conn->query($orderQuery);
 ?>
 
+<style>
+body{
+font-family: Georgia, 'Times New Roman', Times, serif ;
+font-size: 1.2rem;}
+h1 {
+color: #15507a;
+font-weight:bold ; }
+h3, .card-title {
+color: #15507a;
+font-weight:bold ; }
+
+</style>
+
     <div class="container mt-4">
         <h1 class="text-center">Order Details</h1>
         <?php
@@ -28,7 +41,7 @@ $orderResult = $conn->query($orderQuery);
                 echo '<p class="card-text">Address: ' . $row['address'] . '</p>';
 
                 // Display the order items
-                echo '<h4>Order Items:</h4>';
+                echo '<h3 class="mt-3">Order Items:</h3>';
                 echo '<div class="card">';
                 echo '<div class="card-body">';
                 echo '<p class="card-text">Book: ' . $row['title'] . '</p>';
