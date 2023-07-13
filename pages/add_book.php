@@ -1,26 +1,24 @@
 <?php 
 $pageTitle = "Add Book";
-include 'header_admin.php'; ?>
-
-<?php
+include 'header_admin.php';
 include 'config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  // Retrieve book details from the form
+  //book details from form
   $title = $_POST['title'];
   $book_id = $_POST['book_id'];
   $author = $_POST['author'];
   $category = $_POST['category'];
   $price = $_POST['price'];
 
-  // Sanitize input data to prevent SQL injection
+  //check input for special characters
   $title = mysqli_real_escape_string($conn, $title);
   $book_id = mysqli_real_escape_string($conn, $book_id);
   $author = mysqli_real_escape_string($conn, $author);
   $category = mysqli_real_escape_string($conn, $category);
   $price = floatval($price);
 
-    // Upload the book image to the uploads folder
+  //getting image file
   $imagePath = '';
   if ($_FILES['img']['size'] > 0) {
     $targetDirectory = 'asset/images/books/';
@@ -42,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             VALUES ('$title', '$book_id', '$author', '$category', $price, '$imagePath')";
   mysqli_query($conn, $query);
 
-  // Redirect to a success page or refresh the current page
+  // Redirect to books_admin.php
   header("Location: books_admin.php");
   exit();
 }
@@ -73,6 +71,7 @@ font-weight:bold ; }
 
 <div class="container mt-4 mb-4">
   <h1 class="text-center">Add Book</h1>
+  
   <form action="add_book.php" method="POST" enctype="multipart/form-data">
     <div class="form-group mb-2">
       <label for="title">Title:</label>

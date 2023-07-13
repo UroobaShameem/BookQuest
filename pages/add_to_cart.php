@@ -3,8 +3,7 @@
 if (isset($_POST['book_id'])) {
     $book_id = $_POST['book_id'];
 
-    // Assuming you have a database connection
-    include_once 'config.php';
+    include 'config.php';
 
     // Check if the book is already in the cart
     $cartQuery = "SELECT * FROM cart WHERE book_id = $book_id";
@@ -26,7 +25,7 @@ if (isset($_POST['book_id'])) {
         if ($conn->query($insertQuery) === TRUE) {
             header("Location: cart.php");
         } else {
-            echo "Error adding book to cart: ";
+            echo "Error adding book to cart: "; $conn->error;
     }
 }
 

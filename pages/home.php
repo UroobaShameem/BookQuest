@@ -4,6 +4,36 @@ include 'header.php';
 
 ?>
 
+<style>
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif ; }
+h2 {
+    color: #15507a; }
+.card {  
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.card:hover {
+  background-color: #2a90b6;
+  color: #fff;
+}
+.button a {
+    background-color: #15507a;
+    color: #fff;
+}
+.button a:hover {
+    background-color: #fff;
+    color: #15507a;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+
+</style>
+
+//carousel
   <div class="container-fluid mb-2">
   <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
@@ -28,6 +58,48 @@ include 'header.php';
 </div>
 </div>
 
+//categories
+<div class="container">
+<h2 class="text-center">CATEGORIES</h2>
+
+<div class="row mb-3">
+    <div class="col-md-6 col-lg-4 g-5">
+        <div class="card mb-3">
+            <img src="asset/images/pictures/cat1.jpg" class="card-img-top" alt="Category 1">
+            <div class="card-body">
+                <h4 class="card-title text-center">Mystery</h4>
+                <div class="text-center button">
+                    <a href="books.php" class="btn btn-primary">View Books</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 g-5">
+        <div class="card mb-3">
+            <img src="asset/images/pictures/cat2.jpeg" class="card-img-top" alt="Category 2">
+            <div class="card-body">
+                <h4 class="card-title text-center">Young Adult</h4>
+                <div class="text-center button">
+                    <a href="books.php" class="btn btn-primary">View Books</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 g-5">
+        <div class="card mb-3">
+            <img src="asset/images/pictures/cat3.jpeg" class="card-img-top" alt="Category 3">
+            <div class="card-body">
+                <h4 class="card-title text-center">Fiction</h4>
+                <div class="text-center button">
+                    <a href="books.php" class="btn btn-primary">View Books</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
   
 
 </div>
