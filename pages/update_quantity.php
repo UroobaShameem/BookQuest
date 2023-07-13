@@ -1,12 +1,12 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Check if the required parameters are provided
+    //check if cart_id and quantity are set
     if (isset($_POST['cart_id']) && isset($_POST['quantity'])) {
         $cart_id = $_POST['cart_id'];
         $quantity = $_POST['quantity'];
 
-        // Assuming you have a database connection
-        include_once 'config.php';
+        // Database connection
+        include 'config.php';
 
         // Update the quantity in the cart
         $updateQuery = "UPDATE cart SET quantity = $quantity WHERE cart_id = '$cart_id'";
