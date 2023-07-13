@@ -1,11 +1,11 @@
 <?php
 
-// Custom function to generate a unique order ID
+//function to generate order id
 function generateOrderID() {
     $length = 8;
     $orderID = '';
   
-    // Generate a random number order ID
+    //generate a random string of numbers
     for ($i = 0; $i < $length; $i++) {
         $orderID .= mt_rand(0, 9);
     }
@@ -14,21 +14,21 @@ function generateOrderID() {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Retrieve the form data
+    //retrieve data from the form
     $name = $_POST['name'];
     $email = $_POST['email'];
     $address = $_POST['address'];
 
-    // Assuming you have a database connection
-    include_once 'config.php';
+   //database connection
+    include 'config.php';
 
-    // Generate a unique order ID
+    //get order id from function
     $orderId = generateOrderID();
 
     // Insert the order details into the orders table
     $insertOrderQuery = "INSERT INTO orders (name, email, address) VALUES ('$name', '$email', '$address')";
     if ($conn->query($insertOrderQuery) === TRUE) {
-        // Get the last inserted order ID
+        //get the last order id 
         $orderQuery = "SELECT MAX(order_id) AS last_order_id FROM orders";
         $orderResult = $conn->query($orderQuery);
         $orderRow = $orderResult->fetch_assoc();
@@ -54,12 +54,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Close the database connection
         $conn->close();
         ?>
+
+    <style>
+    body {
+    font-family: Georgia, 'Times New Roman', Times, serif ; }
+    h3 {
+    color: #15507a;
+    font-weight:bold ; }
+    p {
+    font-size: 1.2rem;}
+    .button a {
+    background-color: #15507a;
+    color: #fff;
+    font-size: 1.4rem;}
+    .button a:hover {
+    background-color: #fff;
+    color: #15507a;
+    font-size: 1.6rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out;}
+    
+    </style>
+
         <div class="container">
         <div class="alert alert-success" role="alert">
-            Order placed successfully. Order ID: <?php echo $orderId; ?>
+            <h3 class="text-center mx-4">Order placed successfully. Order ID: <?php echo $orderId; ?></h3>
         </div>
-        <p>Thank you, <?php echo $name; ?>, for your order! You will receive an email confirmation shortly.</p>
+        <p class="text-center">Thank you, <?php echo $name; ?>, for your order! You will receive an email confirmation shortly.</p>
+        <div class="text-center button">
             <a href="books.php" class="btn btn-primary">Continue Shopping</a>
+        </div>
         </div>
 
         <?php
