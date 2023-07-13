@@ -32,7 +32,7 @@ h2 {
 
 </style>
 
-  <div class="container-fluid mb-2">
+  <div class="container-fluid mb-4 px-0">
   <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -57,7 +57,7 @@ h2 {
 </div>
 
 <div class="container">
-<h2 class="text-center">CATEGORIES</h2>
+<h2 class="text-center mt-3">CATEGORIES</h2>
 
 <div class="row mb-3">
     <div class="col-md-6 col-lg-4 g-5">

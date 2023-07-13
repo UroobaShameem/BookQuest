@@ -37,9 +37,9 @@ include 'header.php';
 
 </style>
 
-<div class="container">
-    <div class="wrapper">
-    <h1 class="text-center my-2">CART</h1>
+<div class="container mb-3">
+    <div class="wrapper mb-5">
+    <h1 class="text-center mt-4 mb-3">CART</h1>
     <?php
     //database connection
     include_once 'config.php';
@@ -54,10 +54,9 @@ include 'header.php';
     if ($cartResult->num_rows > 0) {
         $total = 0; // storing total amount
         ?>
-        <table class="table">
+        <table class="table mb-3">
             <thead>
                 <tr>
-                    <th>Book</th>
                     <th>Image</th>
                     <th>Price</th>
                     <th>Quantity</th>
@@ -89,7 +88,7 @@ include 'header.php';
                 ?>
             </tbody>
         </table>
-        <div class="text-end button">
+        <div class="text-end button my-2">
             <h5 >Total: $<?php echo $total; ?></h5>
             <a href="checkout.php" class="btn btn-primary my-4">Checkout</a>
         </div>
