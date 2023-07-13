@@ -3,7 +3,7 @@ $pageTitle = "Dashboard";
 include 'header_admin.php';
 include 'config.php';
 
-// Fetch the order details
+//fetch user details from database
 $userQuery = "SELECT u.username, u.password, u.email
                FROM user u";
 $Result = $conn->query($userQuery);
@@ -68,11 +68,10 @@ $Result = $conn->query($userQuery);
 <div class="container mt-4">
         <h5 class="text-center">Registered Users</h5>
         <?php
-        // Check if any orders are found
+        //check if there are any users
         if ($Result->num_rows > 0) {
-            // Loop through each order
+            //print user details
             while ($row = $Result->fetch_assoc()) {
-                // Display the order information
                 echo '<div class="card mb-3">';
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">Username: ' . $row['username'] . '</h5>';

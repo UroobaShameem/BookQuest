@@ -7,15 +7,17 @@ include 'header.php';
     <h1 class="text-center ">Checkout</h1>
 
     <?php
-    // Assuming you have a database connection
-    include_once 'config.php';
+    // database connection
+    include 'config.php';
 
     // Get the cart items
+    // Inner join to get the book details from the books table
     $cartQuery = "SELECT c.cart_id, b.book_id, b.title, b.price, c.quantity
                   FROM cart c
                   INNER JOIN books b ON c.book_id = b.book_id";
     $cartResult = $conn->query($cartQuery);
 
+    // Check if the cart is empty
     if ($cartResult->num_rows > 0) {
         $total = 0;
         
@@ -35,7 +37,7 @@ include 'header.php';
             <tbody>
                 <?php
                 while ($row = $cartResult->fetch_assoc()) {
-                    $subtotal = $row['price'] * $row['quantity'];
+                    $subtotal = $row['price'] * $row['quantity']; // price x quantity for each book
                     $total += $subtotal;
                     ?>
                     <tr>

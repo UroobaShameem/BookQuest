@@ -1,10 +1,10 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Check if the required parameter is provided
+    //check if cart_id is set
     if (isset($_POST['cart_id'])) {
         $cartId = $_POST['cart_id'];
 
-        // Assuming you have a database connection
+        //database connection
         include_once 'config.php';
 
         // Delete the item from the cart

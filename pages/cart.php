@@ -41,17 +41,18 @@ include 'header.php';
     <div class="wrapper">
     <h1 class="text-center my-2">CART</h1>
     <?php
-    // Assuming you have a database connection
+    //database connection
     include_once 'config.php';
 
-    // Get the cart items
+    //getting cart items
+    //inner join to get the book details from the books table
     $cartQuery = "SELECT c.cart_id, b.book_id, b.title, b.img, b.price, c.quantity
                   FROM cart c
                   INNER JOIN books b ON c.book_id = b.book_id";
     $cartResult = $conn->query($cartQuery);
 
     if ($cartResult->num_rows > 0) {
-        $total = 0; // Variable to store the total amount
+        $total = 0; // storing total amount
         ?>
         <table class="table">
             <thead>
@@ -66,8 +67,9 @@ include 'header.php';
             </thead>
             <tbody>
                 <?php
+                //loop to get total amount
                 while ($row = $cartResult->fetch_assoc()) {
-                    $subtotal = $row['price'] * $row['quantity'];
+                    $subtotal = $row['price'] * $row['quantity']; // price x quantity for each book
                     $total += $subtotal;
                     ?>
                     <tr>
@@ -105,10 +107,8 @@ include 'header.php';
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    // Update the UI if the quantity is updated successfully
-                    // You can add any additional logic here, if needed
                     console.log("Quantity updated successfully.");
-                    // Reload the page to reflect the updated cart
+                    // Update the subtotal
                     location.reload();
                 }
             };
