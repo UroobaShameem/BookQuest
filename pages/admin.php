@@ -11,9 +11,11 @@
 
 <?php
 session_start();
+// Connect to the database
+include "config.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if the username and password have been set
+    //check if username and password are given
     if (isset($_POST["username"])) {
         $username = $_POST["username"];
     } else {
@@ -26,21 +28,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit("Password is required");
     }
 
+    // Get the username and password
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Connect to the database
-    $conn = mysqli_connect("localhost", "root", "", "book_quest");
-
-    // Check if the database connection is successful
-    if (!$conn) {
-        die("Database connection failed: " . mysqli_connect_error());
-    }
-
-
+    // Check if the username contains special characters
     $username = mysqli_real_escape_string($conn, $username);
 
-    // Query to validate the login details
+    //check if the username is correct
     $query = "SELECT * FROM admin_bs WHERE username='$username' LIMIT 1";
     $result = mysqli_query($conn, $query);
 

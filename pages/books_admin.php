@@ -28,7 +28,7 @@ include 'header_admin.php'; ?>
   <?php
   include_once 'config.php';
 
-  // Query to fetch unique categories
+  //fetch unique categories from the books table
   $categoryQuery = "SELECT DISTINCT category FROM books";
   $categoryResult = mysqli_query($conn, $categoryQuery);
 
@@ -40,13 +40,13 @@ include 'header_admin.php'; ?>
     $query = "SELECT * FROM books WHERE category = '$category'";
     $result = mysqli_query($conn, $query);
 
-    
+    //display category
     echo '<h2 class="mt-2 mb-3 text-center">' . $category . '</h2>';
     echo '<div class="row">';
 
     // Check if any books found for the category
     if (mysqli_num_rows($result) > 0) {
-      // Loop through the rows and display book cards
+      //display books under category
       while ($row = mysqli_fetch_assoc($result)) {
         echo '<div class="col-sm-6 col-md-4 col-lg-4" id="card-height">';
         echo '<div class="card mb-4">';
