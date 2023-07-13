@@ -24,20 +24,20 @@
       </button>
       <div class="collapse navbar-collapse nav-center" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item px-3">
             <a class="nav-link active" aria-current="page" href="home.php">Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item px-3">
             <a class="nav-link" href="about.php">About</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item px-3">
             <a class="nav-link" href="books.php">Shop</a>
           </li>
 
-          <li class="nav-item nav-right">
+          <li class="nav-item nav-right px-3">
             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fa-solid fa-user-large"></i> Login</a>
           </li>
-          <li class="nav-item nav-right">
+          <li class="nav-item nav-right px-3">
             <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> Cart</a>
           </li>
 

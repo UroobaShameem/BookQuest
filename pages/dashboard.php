@@ -43,7 +43,7 @@ $Result = $conn->query($userQuery);
 <div class="container">
 <div class="wrapper">
 <div class="row mt-3">
-<h1 class="text-center my-2">DASHBOARD</h1>
+<h1 class="text-center mt-2 mb-3">DASHBOARD</h1>
   <div class="col-sm-6 mb-3 mb-sm-0">
     <div class="card">
       <div class="card-body">
@@ -65,8 +65,8 @@ $Result = $conn->query($userQuery);
     </div>
   </div>
 
-<div class="container mt-4">
-        <h5 class="text-center">Registered Users</h5>
+<div class="container mt-4 mb-3">
+        <h5 class="text-center mb-2">Registered Users</h5>
         <?php
         //check if there are any users
         if ($Result->num_rows > 0) {

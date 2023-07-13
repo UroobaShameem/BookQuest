@@ -23,19 +23,19 @@
       </button>
       <div class="collapse navbar-collapse nav-center" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item px-2">
             <a class="nav-link active" aria-current="page" href="dashboard.php">Dashboard</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item px-2">
             <a class="nav-link" href="add_book.php">Add Book</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item px-2">
             <a class="nav-link" href="books_admin.php">Books</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item px-2">
             <a class="nav-link" href="orders.php">Orders</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item px-2">
             <a class="nav-link" href="logout.php">Logout</a>
           </li>
           </ul>

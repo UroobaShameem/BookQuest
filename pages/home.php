@@ -30,10 +30,8 @@ h2 {
     transition: all 0.3s ease-in-out;
 }
 
-
 </style>
 
-//carousel
   <div class="container-fluid mb-2">
   <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
@@ -58,7 +56,6 @@ h2 {
 </div>
 </div>
 
-//categories
 <div class="container">
 <h2 class="text-center">CATEGORIES</h2>
 
