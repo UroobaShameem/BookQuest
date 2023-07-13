@@ -118,14 +118,10 @@ include 'header.php';
         }
 
         function deleteItem(cartId) {
-            // Send an AJAX request to delete the item from the cart
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    // Remove the item from the UI if it is deleted successfully
-                    // You can add any additional logic here, if needed
                     console.log("Item deleted successfully.");
-                    // Reload the page to reflect the updated cart
                     location.reload();
                 }
             };

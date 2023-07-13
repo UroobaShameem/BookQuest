@@ -55,7 +55,6 @@ include 'header_admin.php'; ?>
         echo '</div>';
         echo '<div class="card-body">';
         echo '<h4 class="card-title text-center">' . $row['title'] . '</h4>';
-        
         echo '<h5 class="card-subtitle mb-2 text-muted">' . $row['author'] . '</h5>';
         echo '<p class="card-text">' . $row['book_id'] . '</p>';
         echo '<p class="card-text">Price: $' . $row['price'] . '</p>';
@@ -74,7 +73,6 @@ include 'header_admin.php'; ?>
   // Close the database connection
   mysqli_close($conn);
   ?>
-
 </div>
 
 <?php include 'footer.php'; ?>

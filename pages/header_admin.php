@@ -24,7 +24,7 @@
       <div class="collapse navbar-collapse nav-center" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="dashboard.php">Home</a>
+            <a class="nav-link active" aria-current="page" href="dashboard.php">Dashboard</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="add_book.php">Add Book</a>

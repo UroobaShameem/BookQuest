@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   mysqli_query($conn, $query);
 
   // Redirect to a success page or refresh the current page
-  header("Location: books.php");
+  header("Location: books_admin.php");
   exit();
 }
 
