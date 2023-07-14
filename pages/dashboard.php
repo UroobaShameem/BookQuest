@@ -40,10 +40,11 @@ $Result = $conn->query($userQuery);
     }
 </style>
 
-<div class="container">
+<div class="container-fluid px-0">
 <div class="wrapper">
 <div class="row mt-3">
-<h1 class="text-center mt-2 mb-3">DASHBOARD</h1>
+<h1 class="text-center mb-3">DASHBOARD</h1>
+
   <div class="col-sm-6 mb-3 mb-sm-0">
     <div class="card">
       <div class="card-body">
@@ -77,6 +78,8 @@ $Result = $conn->query($userQuery);
                 echo '<h5 class="card-title">Username: ' . $row['username'] . '</h5>';
                 echo '<p class="card-text">Password: ' . $row['password'] . '</p>';
                 echo '<p class="card-text">Email: ' . $row['email'] . '</p>';
+                echo '</div>';
+                echo '</div>';
               }
             } else {
                 echo '<p>No users found.</p>';
@@ -85,11 +88,9 @@ $Result = $conn->query($userQuery);
             // Close the database connection
         $conn->close();
         ?>
+
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
+
 
 <?php include 'footer.php'; ?>
